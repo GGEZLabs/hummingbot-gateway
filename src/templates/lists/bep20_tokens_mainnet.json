@@ -13,6 +13,14 @@
   ],
   "tokens": [
     {
+      "name": "Binance-Peg GGEZ1 Token",
+      "symbol": "GGEZ1",
+      "address": "0xEc29c09208eB99e22C81B797679a69Bcf55461Cf",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://res.cloudinary.com/dvgnuchjw/image/upload/v1717481412/ggez1-s_gq5u9i.png"
+    },
+    {
       "name": "PancakeSwap Token",
       "symbol": "CAKE",
       "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",

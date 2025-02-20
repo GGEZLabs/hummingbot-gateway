@@ -379,16 +379,16 @@ export class PancakeSwap implements Uniswapish {
     }
 
     // Define v3 pool on-chain fetcher with customized tvl references
-    const getV3CandidatePools = SmartRouter.createGetV3CandidatePools(
-      // Use your customized v3 pool fetcher by default
-      SmartRouter.getV3PoolsWithTvlFromOnChain,
-      {
-        fallbacks: [],
-        // In millisecond
-        // Will try fallback fetcher if the default doesn't respond in 2s
-        fallbackTimeout: 1500,
-      },
-    );
+    // const getV3CandidatePools = SmartRouter.createGetV3CandidatePools(
+    //   // Use your customized v3 pool fetcher by default
+    //   SmartRouter.getV3PoolsWithTvlFromOnChain,
+    //   {
+    //     fallbacks: [],
+    //     // In millisecond
+    //     // Will try fallback fetcher if the default doesn't respond in 2s
+    //     fallbackTimeout: 1500,
+    //   },
+    // );
 
     const allPools = await Promise.allSettled([
       // @ts-ignore
@@ -402,7 +402,7 @@ export class PancakeSwap implements Uniswapish {
         currencyA,
         currencyB,
       }),
-      getV3CandidatePools({
+      SmartRouter.getV3CandidatePools({
         // @ts-ignore
         onChainProvider: () => this.createPublicClient(),
         // @ts-ignore
@@ -439,7 +439,9 @@ export class PancakeSwap implements Uniswapish {
     });
 
     const pools = await this.getPools(baseToken, quoteToken);
-    logger.info(`Found ${pools.length} pools for ${baseToken.symbol}-${quoteToken.symbol}`);
+    logger.info(
+      `Found ${pools.length} pools for ${baseToken.symbol}-${quoteToken.symbol}`,
+    );
 
     const trade = await SmartRouter.getBestTrade(
       baseTokenAmount,
@@ -461,18 +463,19 @@ export class PancakeSwap implements Uniswapish {
 
   private createPublicClient(): PublicClient {
     const transportUrl: string = this.chain.rpcUrl;
-    const chainConfig = this.chainId === 56
-      ? bsc
-      : this.chainId === 1
-        ? mainnet
-        : this.chainId === 42161
-          ? arbitrum
-          : this.chainId === 324
-            ? zkSync
-            : bscTestnet;
+    const chainConfig =
+      this.chainId === 56
+        ? bsc
+        : this.chainId === 1
+          ? mainnet
+          : this.chainId === 42161
+            ? arbitrum
+            : this.chainId === 324
+              ? zkSync
+              : bscTestnet;
 
     return createPublicClient({
-      chain: chainConfig as any,  // Type assertion to bypass strict checking
+      chain: chainConfig as any, // Type assertion to bypass strict checking
       transport: http(transportUrl),
       batch: {
         multicall: {
