@@ -109,7 +109,7 @@ export async function getSwapQuote(
           poolInfo: clmmPoolInfo,
           tickArrayCache: tickCache[poolAddress],
           amountIn: amount_bn,
-          tokenOut: poolInfo['mintB'],
+          tokenOut: poolInfo['mintA'],
           slippage: effectiveSlippageNumber,
           epochInfo: await raydium.raydiumSDK.fetchEpochInfo(),
           catchLiquidityInsufficient: true,
