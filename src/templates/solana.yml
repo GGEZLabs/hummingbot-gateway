@@ -1,6 +1,6 @@
 networks:
   mainnet-beta:
-    nodeURL: https://api.mainnet-beta.solana.com
+    nodeURL: https://neat-tiniest-pallet.solana-mainnet.quiknode.pro/<quiknode_token>/
     tokenListType: FILE
     tokenListSource: /home/gateway/conf/lists/solana.json
     nativeCurrencySymbol: SOL

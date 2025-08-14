@@ -29,6 +29,7 @@ networks:
       SOL-TRUMP: 'GQsPr4RJk9AZkkfWHud7v4MtotcxhaYzZHdsPCg9vNvW'
       LAYER-USDC: 'G6drsaPCR3pxsEmSTAc81kW1EL3kFAFwtSAkzUZXmgH3'
       TRUMP-USDC: '7XzVsjqTebULfkUofTDH5gDdZDmxacPmPuTfHa1n9kuh'
+      GGEZ1-USDT: '7RM2RHDyyNccqXbYEi3u5NzXijJBxzb7rUqNPVwiJEbn'
   
   # Solana devnet pools
   devnet:

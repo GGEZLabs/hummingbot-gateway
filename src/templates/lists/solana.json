@@ -1,6 +1,13 @@
 [
   {
     "chainId": 101,
+    "name": "Solana-Peg GGEZ1 Token",
+    "symbol": "GGEZ1",
+    "address": "5cerJBJD7q3xfi24JVxSoP8AqeavuUatJtrfrXVokZR3",
+    "decimals": 9
+  },
+  {
+    "chainId": 101,
     "name": "OFFICIAL TRUMP",
     "symbol": "TRUMP",
     "address": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
