@@ -348,9 +348,9 @@ export class PancakeSwap implements Uniswapish {
     let v2SubgraphClient: GraphQLClient;
 
     const v3Bscurl: string =
-      'https://api.thegraph.com/subgraphs/name/pancakeswap/exchange-v3-bsc';
+      'https://thegraph.com/hosted-service/subgraph/pancakeswap/exchange-v3-bsc';
     const v2Bscurl: string =
-      'https://proxy-worker-api.pancakeswap.com/bsc-exchange';
+      'https://nodereal.io/meganode/api-marketplace/pancakeswap-graphql';
     const v3Ethurl: string =
       'https://api.thegraph.com/subgraphs/name/pancakeswap/exchange-v3-eth';
     const v2Ethurl: string =
